@@ -1,0 +1,50 @@
+# Prompt do zadań z rekurencja Ogonowa:
+
+Przy użyciu biblioteki import scala.annotation.tailrec,w jezyku programowania Scala, rozwiąż następujące zadanie:
+Treść zadania:
+"WKLEJ ZADANIE"
+Rozwiązanie powinno zawierać adnotację @tailrec, aby zapewnić optymalizację ogonową.
+
+W rozwiązaniu skorzystaj z rekurencji ogonowej oraz dopasowania do wzorca (pattern matching). Nie używaj „pętli” 
+(wyrażeń: foreach, while, for, for/yield), wyrażeń warunkowych, (konstrukcji tj. if/if … else), które nie są 
+elementem dopasowania do wzorca,  zmiennych, kolekcji mutowalnych, ani gotowych modułów (np. math). Spośród operacji na 
+obiektach możesz jedynie wykorzystać: dołączanie elementu na początek listy (::), metody: size/length, reverse, operacje 
+arytmetyczne oraz operacje logiczne.
+
+
+
+# Prompt do zadań z tablicami jeśli jest plik tekstowy np. csv
+W jezyku programowania Scala rozwiąż zadanie, uwzledniajac to ze wszystko będzie w jednym pliku oraz uwzglednij wywolanie to w main(@main 
+def zad: Unit = {})
+
+Treść zadania: "".
+
+ W rozwiązaniu nie używaj: zmiennych, kolekcji mutowalnych, „pętli” (konstrukcji takich, jak while, foreach, for bez yield), 
+ani rekurencji.
+
+
+
+# Prompt do zadań z Aktorami:
+
+Rozwiąż poniższe zadanie bez korzystania z „pętli” while, zmiennych i kolekcji mutowalnych.
+W jezyku programowania Scala rozwiąż zadanie, uwzledniajac to ze wszystko będzie w jednym pliku oraz uwzglednij wywolanie to w main(@main 
+def zad: Unit = {
+
+})
+Rozwiązanie powinno zawierać taki wzór aktorów:
+"import org.apache.pekko
+import pekko.actor._
+
+object MyActor {
+  case class Greeting(from: String)
+  case object Goodbye
+}
+class MyActor extends Actor with ActorLogging {
+  import MyActor._
+  def receive = {
+    case Greeting(greeter) => log.info(s"I was greeted by $greeter.")
+    case Goodbye           => log.info("Someone said goodbye to me.")
+  }
+}"
+Rozwiąż następujące zadanie:
+"Tresc Zadania".
