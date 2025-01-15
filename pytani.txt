@@ -33,3 +33,46 @@ zad2
  })
  println(convert) //dane z pliku w postaci listy krotek 
 }
+
+zad3 
+import org.apache.pekko
+import pekko.actor.*
+import scala.util.Random
+
+
+case class Zlecenie(l: List[List[Double]])
+case object Start
+case class Suma(liczby: List[Double])
+case class Blad(liczby: List[Double])
+case class Wynik(n: Double)
+
+//korzystając z aktorów zaimplementuj symulator analizy wartości monet. jego insfrastruktura powinna składać się z aktra głównego,typu
+class Koordynator extends Actor {
+  def receive: Receive = {
+    ???
+  }
+}
+//początkowo  koordynator powninen być w stanie przyjąć jedynie komunikat 
+case class Zlecenie(l:List[List[Double]])
+//którego argumentem jest lista, która zawiera listy. która zawiera wartości monet pojedyńczych osób. Po otrzymaniu komunikatu Zlecenie, koordynator powinien utworzyć aktorów typu
+class Pracownik extends Actor {
+  def receive: Receive = {
+    ???
+  }
+}
+//których liczba będzie taka sama jak liczba otrzymanych list zagnieżdżonych ( list znajdujących się w liści) oraz przejść do stanu w którym będzie mógł przyjąć komunikat
+case object Start
+//po jego otrzymaniu  koordynator powinien wysłąć do przystkich pracowników, kolejne podlisty, poprzez komunkat
+case class Sumuj(liczby: List[Double])
+
+//Jeżeli pracownik otrzyma listę która zawiera liczby ujemne , powinien odesłać listę do kkordynatora, poprzez komunikat
+case class Blad
+//W przeciwnim wypadku Pracownik powninen wyliczyć suę llicz z otrzymanej lsty oraz wysłać do koordynatora wynik poprzez komnikat
+case class Wynik()
+//W przypadku otrzymania komunikatu Blad , koordynator powinien usunąć z listy ujemne wartości i wysłać ponownie liste do pracownika od którego otrzymał wiadomość przez komunikat Sumuj
+//po odebraniu wyniku od wszystkich pracowników powinien wyświetlić informacje odnośnie tego która suma w podlistach jest najwieksza oraz oraz zakończyć cały system aktorów ( context.system.terminate())
+
+@main 
+def zad3: Unit = {
+  val system = ActorSystem("Kolokwium")
+}
