@@ -1,2 +1,13 @@
 zad 1
+//zdefiniuj generyczną funkcje rekurencyjną
+def isStr[A](l: List[A], len: Int)(pred: A => Boolean): Boolean = {
+//Która zwróci informacje czy istnieje podcią z listy l, który spełnia predykat pred, którego długość wynosi co najmniej wartość podanej jako argument len
+//przykład dla l == List(1,2,6,4,1,3,5,7,10,2,-1,4,5,1,3)
+//len == 3
+//pred == (a:Int) => a >2
+//powiniśmy otrzymać True
+  ???
+}
 
+@main def zad1: Unit = {
+}
