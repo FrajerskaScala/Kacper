@@ -11,3 +11,25 @@ def isStr[A](l: List[A], len: Int)(pred: A => Boolean): Boolean = {
 
 @main def zad1: Unit = {
 }
+
+zad2 
+//Plik noworodki.txt zawiera dane rozdzielone średnikiem, na temat dzieci tj. płeć (c - córka, syn - syn), imię, data urodzenia ( w formacie dd.mm.rrrr, np. 09.09.1999), wzrost [cm]
+// przykład: c;Agnieszka;16.11.1999;48
+//korzystając z metod oferowanych przez kolekcje (możesz też użyć dor/yield), utwórz zestawienie odnośnie danych z pliku noworodki.csv, prrzedstawiającą najmniejszy wzrost dziweczynek, które urodziły się w danym miesiący. Zestawienie powinno być przedstawione w liście która zawira krotki, w postaci (pozycja, miesiąc , minimalny_wzrost)
+//gdzie pozycja to miejsce któe zajmuje miesiąc pod względem posiadania najwiekszej minimalnej waki
+//miesiąć to miesiąc
+//minimalny_wzrost to minimaln wzrost ze wszystkich dziewczynek urodzonych w danym miesiącu.
+//zestawienie powinno byc posortowane malejąco 
+//sposób prezentacji zestawienia: List((1,10,55),(2,11,48),(2,12,48))
+//miesiące nr 11 inr 12 mają pozycje 2 ponieważ minimalna waga urodzonych dziweczynek jest taka sama
+@main def zad2: Unit = {
+ val noworodki = io.Source
+  .fromResource("noworodki.txt")
+  .getLines.toList
+  
+ val convert = noworodki.map(_.split(";").toList).map(_ match {
+   case List(plec, imie, data_ur, waga) => (plec, imie, data_ur, waga)
+   case _ => throw new IllegalArgumentException
+ })
+ println(convert) //dane z pliku w postaci listy krotek 
+}
